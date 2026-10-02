@@ -1,0 +1,312 @@
+# ============================================================
+# Anan - .gitignore
+# Automated Video Localization Pipeline
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# API keys, tokens, credentials, cookies, etc.
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+*.key
+*.pem
+*.secret
+secrets/
+credentials/
+
+# Cookies used by yt-dlp
+*cookies*.txt
+cookies.txt
+
+
+# ------------------------------------------------------------
+# IDE / Editor
+# ------------------------------------------------------------
+.idea/
+.vscode/
+
+*.iml
+*.ipr
+*.iws
+
+# VS Code local settings
+*.code-workspace
+
+
+# ------------------------------------------------------------
+# OS generated files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows
+$RECYCLE.BIN/
+System Volume Information/
+
+
+# ------------------------------------------------------------
+# Anan temporary workspace
+# Everything here should be disposable
+# ------------------------------------------------------------
+temp/
+tmp/
+cache/
+.cache/
+
+work/
+workspace/
+jobs/
+
+runtime/
+sessions/
+
+# Per-job temporary data
+job_*/
+jobs/job_*/
+
+
+# ------------------------------------------------------------
+# Downloaded source media
+# ------------------------------------------------------------
+downloads/
+source/
+sources/
+
+*.part
+*.ytdl
+
+
+# ------------------------------------------------------------
+# Video files
+# Do not commit generated/downloaded media
+# ------------------------------------------------------------
+*.mp4
+*.mkv
+*.webm
+*.avi
+*.mov
+*.flv
+*.m4v
+*.ts
+
+
+# ------------------------------------------------------------
+# Audio / Demucs / TTS temporary files
+# ------------------------------------------------------------
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.opus
+*.wma
+
+stems/
+separated/
+demucs_output/
+
+vocals/
+no_vocals/
+background_audio/
+
+tts_output/
+tts_chunks/
+synced_audio/
+mixed_audio/
+
+
+# ------------------------------------------------------------
+# Frames / OCR / Computer Vision temporary files
+# ------------------------------------------------------------
+frames/
+ocr_frames/
+screenshots/
+extracted_frames/
+
+*.bmp
+*.tiff
+*.tif
+
+
+# ------------------------------------------------------------
+# Temporary subtitle / transcription files
+# ------------------------------------------------------------
+transcripts/
+subtitles/generated/
+subtitles/temp/
+
+*.srt.tmp
+*.ass.tmp
+*.vtt.tmp
+
+
+# ------------------------------------------------------------
+# Pipeline intermediate data
+# ------------------------------------------------------------
+artifacts/
+intermediate/
+intermediates/
+
+transcription.json
+speakers.json
+diarization.json
+ocr.json
+translation.json
+validation.json
+
+*_transcription.json
+*_speakers.json
+*_diarization.json
+*_ocr.json
+*_translation.json
+*_validation.json
+
+
+# ------------------------------------------------------------
+# Final generated outputs
+# ------------------------------------------------------------
+output/
+outputs/
+exports/
+rendered/
+
+
+# ------------------------------------------------------------
+# Anan local database / runtime state
+# ------------------------------------------------------------
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+anan.db
+
+
+# ------------------------------------------------------------
+# Logs
+# ------------------------------------------------------------
+logs/
+*.log
+
+ffmpeg*.log
+yt-dlp*.log
+anan*.log
+
+
+# ------------------------------------------------------------
+# ML / AI models
+# Models can be huge and should be downloaded separately
+# ------------------------------------------------------------
+models/
+weights/
+checkpoints/
+
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.bin
+
+# Hugging Face cache
+.huggingface/
+huggingface/
+
+# Torch cache
+.torch/
+torch_cache/
+
+# Whisper models/cache
+whisper_models/
+whisper_cache/
+
+
+# ------------------------------------------------------------
+# Build / Distribution
+# PyInstaller, setuptools, etc.
+# ------------------------------------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# PyInstaller
+*.spec
+# Remove the line above if Anan's .spec file is intentionally versioned.
+
+
+# ------------------------------------------------------------
+# Packaging / installers
+# ------------------------------------------------------------
+installer_output/
+release/
+releases/
+
+*.exe
+*.msi
+
+
+# ------------------------------------------------------------
+# Bundled third-party binaries
+# Ignore these if downloaded during setup/build
+# ------------------------------------------------------------
+tools/ffmpeg/
+tools/ffprobe/
+tools/yt-dlp/
+
+ffmpeg.exe
+ffprobe.exe
+yt-dlp.exe
+
+
+# ------------------------------------------------------------
+# Local Anan configuration
+# ------------------------------------------------------------
+config.local.json
+settings.local.json
+anan.local.json
+
+
+# ------------------------------------------------------------
+# Temporary / backup files
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.old
+*.swp
+*.swo
+*~
