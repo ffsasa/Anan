@@ -1,0 +1,28 @@
+[project]
+name = "anan"
+version = "0.1.0"
+description = "Automated video localization and dubbing pipeline"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "typer",
+    "pydantic",
+]
+
+[project.scripts]
+anan = "anan.entrypoints.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anan"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
